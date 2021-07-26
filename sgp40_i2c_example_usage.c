@@ -46,21 +46,29 @@
  * #define printf(...)
  */
 
-// TODO: DRIVER_GENERATOR Add missing commands and make prints more pretty
-
 int main(void) {
-    int16_t error = 0;
-
     sensirion_i2c_hal_init();
 
     // Start Measurement
 
+    // Parameters for deactivated humidity compensation:
+    uint16_t default_rh = 0x8000;
+    uint16_t default_t = 0x6666;
+
     for (;;) {
-        // Read Measurement
-        // TODO: DRIVER_GENERATOR check and update measurement interval
+        int16_t error = 0;
+        uint16_t sraw_voc;
+
         sensirion_i2c_hal_sleep_usec(1000000);
-        // TODO: DRIVER_GENERATOR Add scaling and offset to printed measurement
-        // values
+
+        error = sgp40_measure_raw(default_rh, default_t, &sraw_voc);
+        if (error) {
+            printf("Error executing sgp40_measure_raw(): "
+                   "%i\n",
+                   error);
+        } else {
+            printf("SRAW VOC: %u\n", sraw_voc);
+        }
     }
 
     return 0;
