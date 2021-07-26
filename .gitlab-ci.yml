@@ -35,7 +35,8 @@ test:
   script:
     - git clone -b 3.0.0 https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab/MSO-SW/drivers/testbed/i2c-mux-testbed.git
     - cd tests/
-    - make test
+# TODO There is no SGP41 attached to the testbed yet
+#    - make test
 
 TODO_check:
   stage: validate
