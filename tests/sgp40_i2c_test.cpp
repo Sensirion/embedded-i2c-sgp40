@@ -49,9 +49,7 @@ TEST_GROUP (SGP40_Tests) {
     void setup() {
         sensirion_i2c_hal_init();
 
-        // Select MUX 1 channel 1 (No SGP40 attached yet... choose correct mux
-        // position when SGP40 added to testbed)
-        int16_t error = sensirion_i2c_mux_set_single_channel(0x71, 1);
+        int16_t error = sensirion_i2c_mux_set_single_channel(0x71, 0);
         CHECK_EQUAL_ZERO_TEXT(error, "sensirion_i2c_mux_set_single_channel")
     }
 
