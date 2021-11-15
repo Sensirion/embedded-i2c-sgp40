@@ -34,6 +34,7 @@
 #include "sensirion_common.h"
 #include "sensirion_config.h"
 #include "sensirion_i2c_hal.h"
+#include "main.h"
 
 /**
  * Create new I2C instance. You may also use a different interface, e.g. hi2c2,
