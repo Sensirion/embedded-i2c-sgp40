@@ -57,19 +57,19 @@ void sensirion_i2c_hal_init(void) {
   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
   {
-    Error_Handler();
+//    Error_Handler();
   }
   /** Configure Analogue filter
   */
   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
   {
-    Error_Handler();
+//    Error_Handler();
   }
   /** Configure Digital filter
   */
   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
   {
-    Error_Handler();
+//    Error_Handler();
   }
 }
 
