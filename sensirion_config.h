@@ -75,6 +75,14 @@
 #include <stdbool.h>
 #else
 
+///**
+//  * @brief  This function is executed in case of error occurrence.
+//  * @retval None
+//  */
+//void Error_Handler(void)
+#include "main.h"
+
+
 #ifndef bool
 #define bool int
 #define true 1
